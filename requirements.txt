@@ -1,0 +1,8 @@
+viberbot
+flask
+python-dotenv
+python-statemachine
+requests
+pytest
+mypy
+dataclasses-json
