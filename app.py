@@ -116,7 +116,7 @@ def on_help_cmd(viber_request: ViberMessageRequest):
         ]
     )
 
-def on_add_power_meter_factory_cmd(viber_request: ViberMessageRequest, number: str) -> None:
+def on_add_power_meter_factory_cmd(viber_request: ViberMessageRequest, number: str):
     ci: List[Counter] = service.search_by_number(number)
     
     try:
@@ -201,7 +201,7 @@ def on_delete_power_meter_factory_choosen_cmd(viber_request: ViberMessageRequest
             ]
         )      
 
-def on_add_power_meter_by_contract_number_cmd(viber_request: ViberMessageRequest, contract: str) -> None:
+def on_add_power_meter_by_contract_number_cmd(viber_request: ViberMessageRequest, contract: str):
     ci: List[Counter] = service.search_by_contract(contract)
     
     try:

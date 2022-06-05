@@ -13,7 +13,7 @@ from json import JSONEncoder, dumps
 
 CounterInfo = namedtuple('CounterInfo', 'counter_uuid, counter_factory, owner_name, contract_number')
 
-@dataclass(frozen=True,slots=True)
+@dataclass(frozen=True)
 class User:
     id: str
     name: str
@@ -26,7 +26,7 @@ class HistoryCounterValue:
     date: date
 
 @dataclass_json
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True)
 class Counter():
     counter_uuid: str = field(metadata=config(mm_field=fields.String()))
     counter_factory: str = field(metadata=config(mm_field=fields.String()))

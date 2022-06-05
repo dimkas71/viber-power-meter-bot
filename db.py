@@ -53,7 +53,7 @@ def init_db(db_name: str):
 
    
 
-def add_user(user_id: str, user_name: str) -> User | None:
+def add_user(user_id: str, user_name: str) -> User:
     with sqlite3.connect(str(environ.get('DB_NAME'))) as conn:
         curr = conn.cursor()
         curr.execute('select * from user where id = :user_id', (user_id,))
@@ -70,7 +70,7 @@ def add_user(user_id: str, user_name: str) -> User | None:
             else:
                 return None    
 
-def delete_user(user_id: str) -> User | None:
+def delete_user(user_id: str) -> User:
     u = None
     with sqlite3.connect(str(environ.get('DB_NAME'))) as conn:
         curr = conn.cursor()
@@ -85,7 +85,7 @@ def delete_user(user_id: str) -> User | None:
                 u = None # user deletion has been failed...
     return u                    
 
-def update_or_if_not_create_counter(counter: Counter, user_id: str) -> Counter | None:
+def update_or_if_not_create_counter(counter: Counter, user_id: str) -> Counter:
     u = _get_user_by_id(user_id=user_id)    
 
     if not u:
@@ -165,7 +165,7 @@ def delete_counter(user_id: str, counter_uuid: str) -> bool:
     return success
 
 
-def _get_user_by_id(user_id: str) -> User | None:
+def _get_user_by_id(user_id: str) -> User:
     with sqlite3.connect(str(environ.get('DB_NAME'))) as conn:
         curr = conn.cursor()
         curr.execute('select * from user where id = :user_id', (user_id,))

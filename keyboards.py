@@ -104,7 +104,7 @@ to_main_menu_keyboard = {
 	]
 }
 
-def create_keyboard_on_counter(counters: List[Counter] | List[CounterInfo]):
+def create_keyboard_on_counter(counters):
 	keyboard = \
 	{
 		"Type": "keyboard",

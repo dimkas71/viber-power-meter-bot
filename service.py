@@ -8,7 +8,7 @@ from os  import environ
 from typing import List
 from models import Counter, HistoryCounterValue
 
-def search_by_uuid(uuid: str) -> Counter | None:
+def search_by_uuid(uuid: str) -> Counter:
     response = requests.get(f"{environ.get('API_BASE_URL')}/list", auth=(environ.get('API_USER'), environ.get('API_PASSWORD')))
     
     if response.status_code == 200:
@@ -39,7 +39,7 @@ def search_by_contract(contract: str) -> List[Counter]:
     else:
         return []    
 
-def last_counter_value(counter_uuid: str) -> int | None:
+def last_counter_value(counter_uuid: str) -> int:
     params = {'uuid': counter_uuid}
     response = requests.get(f"{environ.get('API_BASE_URL')}/history", params=params, auth=(environ.get('API_USER'), environ.get('API_PASSWORD')))
     if response.status_code == 200:
