@@ -2,5 +2,6 @@
 ..env.un*
 ..gitigno*
 .gitignore~
+*.py~
 __pycache__/
 venv/
