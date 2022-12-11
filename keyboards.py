@@ -14,6 +14,7 @@ AB_ADD_POWER_METER_BY_CONTRACT_CMD = "add_power_meter_by_contract_cmd"
 AB_DELETE_POWER_METER_CMD = "delete_power_meter_cmd"
 AB_HELP_CMD = "help_cmd"
 AB_MAIN_MENU_CMD = "main_menu_cmd"
+AB_START_CMD = "start_cmd"
 
 
 main_menu_keyboard = {
@@ -98,6 +99,25 @@ to_main_menu_keyboard = {
 			"TextVAlign": "center",
 			"ActionType": "reply",
 			"ActionBody": AB_MAIN_MENU_CMD,
+			"BgColor": BTN_BG_COLOR,
+			"Image": ""
+		},
+	]
+}
+
+start_keyboard = {
+	"Type": "keyboard",
+	"Buttons":
+	[
+		{
+			"Columns": 6,
+			"Rows": 1,
+			"Text": "<font color='{0}'>Початок</font><br><br>".format(BTN_FONT_COLOR),
+			"TextSize": "medium",
+			"TextHAlign": "center",
+			"TextVAlign": "center",
+			"ActionType": "reply",
+			"ActionBody": AB_START_CMD,
 			"BgColor": BTN_BG_COLOR,
 			"Image": ""
 		},
